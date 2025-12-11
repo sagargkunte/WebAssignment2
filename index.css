@@ -1,0 +1,84 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    min-height: 100vh;
+}
+
+/* Glass Panel Aesthetic */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease-in-out;
+}
+
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Inputs - Clean Modern Look */
+input, select, textarea {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+    background: #fff;
+}
+
+/* Buttons */
+button {
+    border-radius: 12px !important;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9ca3af;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Success Panel Enhancements */
+#success-display {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+/* Data display box */
+#success-display .bg-white,
+#display-address {
+    border-radius: 8px !important;
+    background: #fafafa !important;
+}
+
+/* Text improvements */
+#success-display span.font-medium {
+    font-weight: 600;
+}
+
+/* Hover effect for "Submit Another Application" */
+#reset-btn {
+    transition: color 0.25s ease;
+}

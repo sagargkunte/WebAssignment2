@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Application Form</title>
+    <!-- jQuery CDN (Required for the assignment) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex items-center justify-center p-4">
+
+    <div class="container max-w-2xl mx-auto">
+        
+        <!-- HEADER -->
+        <div class="text-center mb-8 text-white">
+            <h1 class="text-4xl font-bold mb-2 text-shadow">Student Registration</h1>
+            <p class="opacity-90">University Online Application Portal</p>
+        </div>
+
+        <!-- FORM SECTION -->
+        <div id="application-form-container" class="glass-panel p-8 transition-all duration-500">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6 border-b pb-2">Application Details</h2>
+            
+            <form id="registrationForm" class="space-y-5">
+                <!-- Name Field -->
+                <div>
+                    <label for="fullname" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                        placeholder="e.g. John Doe">
+                </div>
+
+                <!-- Email & Phone Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" required 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                            placeholder="john@example.com">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                            placeholder="(123) 456-7890">
+                    </div>
+                </div>
+
+                <!-- Gender -->
+                <div>
+                    <span class="block text-sm font-medium text-gray-700 mb-2">Gender</span>
+                    <div class="flex space-x-6">
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="radio" name="gender" value="Male" required class="text-purple-600 focus:ring-purple-500">
+                            <span class="text-gray-700">Male</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="radio" name="gender" value="Female" class="text-purple-600 focus:ring-purple-500">
+                            <span class="text-gray-700">Female</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="radio" name="gender" value="Other" class="text-purple-600 focus:ring-purple-500">
+                            <span class="text-gray-700">Other</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Course Selection -->
+                <div>
+                    <label for="course" class="block text-sm font-medium text-gray-700 mb-1">Course Applying For</label>
+                    <select id="course" name="course" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition bg-white">
+                        <option value="" disabled selected>Select a course</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Business Administration">Business Administration</option>
+                        <option value="Data Science">Data Science</option>
+                    </select>
+                </div>
+
+                <!-- Address -->
+                <div>
+                    <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Permanent Address</label>
+                    <textarea id="address" name="address" rows="3" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
+                        placeholder="Enter your full address"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-4">
+                    <button type="submit" 
+                        class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:from-purple-700 hover:to-indigo-700 transform hover:-translate-y-0.5 transition duration-200 shadow-lg">
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- SUCCESS DISPLAY SECTION (Hidden by default) -->
+        <div id="success-display" class="glass-panel p-8 hidden text-center transform scale-95 opacity-0 transition-all duration-500">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Application Submitted!</h2>
+            <p class="text-gray-500 mb-8">Your registration has been received successfully.</p>
+            
+            <div class="bg-gray-50 rounded-lg p-6 text-left shadow-inner border border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">Submitted Information</h3>
+                
+                <div class="grid grid-cols-1 gap-y-3 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-gray-500">Full Name:</span>
+                        <span id="display-name" class="font-medium text-gray-900"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-500">Email:</span>
+                        <span id="display-email" class="font-medium text-gray-900"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-500">Phone:</span>
+                        <span id="display-phone" class="font-medium text-gray-900"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-500">Gender:</span>
+                        <span id="display-gender" class="font-medium text-gray-900"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-500">Course:</span>
+                        <span id="display-course" class="font-medium text-purple-600"></span>
+                    </div>
+                    <div class="flex flex-col mt-2">
+                        <span class="text-gray-500 mb-1">Address:</span>
+                        <span id="display-address" class="font-medium text-gray-900 bg-white p-2 rounded border border-gray-100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <button id="reset-btn" class="mt-6 text-purple-600 hover:text-purple-800 font-medium hover:underline">
+                Submit Another Application
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- 
+    
+    <?php
+    /*
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = htmlspecialchars($_POST['fullname']);
+        $email = htmlspecialchars($_POST['email']);
+        $phone = htmlspecialchars($_POST['phone']);
+        $gender = htmlspecialchars($_POST['gender']);
+        $course = htmlspecialchars($_POST['course']);
+        $address = htmlspecialchars($_POST['address']);
+
+        echo "<h2>Application Successful</h2>";
+        echo "<p><strong>Name:</strong> $name</p>";
+        echo "<p><strong>Email:</strong> $email</p>";
+        echo "<p><strong>Course:</strong> $course</p>";
+        // ... echo other fields ...
+    }
+    */
+    ?>
+    -->
+
+</body>
+<script src="index.js"></script>
+</html>
